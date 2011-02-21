@@ -1,0 +1,24 @@
+# jQuery getPathPlus
+
+## Purpose:
+
+I was working on a project where all I know was the element in which a certain text/selection lives in, but need to know the full selector between the known element and the closest element with an ID.  I found a code snippet written by [Andreas Blixt](http://github.com/blixt) and, with his permission, improved it.
+    
+## Usage:
+
+    $(selector).getPathPlus(separator);
+
+Sample HTML Code:
+
+    <div id="main">
+        <span>
+            <p class="word">Word</p>
+        </span>
+    </div>
+    
+
+    $('.word').getPathPlus();
+    >> "#main span p.word"
+    
+    $('.word').getPathPlus(' > ');
+    >> "#main > span > p.word"
